@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido Especial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f8f8f8;
+    }
+
+    h1 {
+      color: #ff1493;
+      margin-top: 50px;
+    }
+
+    p {
+      color: #333;
+      margin: 30px auto;
+      max-width: 600px;
+    }
+
+    #button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 10px;
+      background-color: #ff1493;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Quer namorar comigo?</h1>
+  <p>Olá [Mateus], eu queria te fazer uma pergunta muito especial...</p>
+  <div id="button-container">
+    <button id="yes-button" onclick="alert('Yay! Você me deixou muito feliz! 😍')">Sim</button>
+    <button id="no-button" onclick="moveNoButton()">Não</button>
+  </div>
+
+  <script>
+    function moveNoButton() {
+      const noButton = document.getElementById('no-button');
+      const maxX = window.innerWidth - noButton.clientWidth;
+      const maxY = window.innerHeight - noButton.clientHeight;
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      noButton.style.position = 'absolute';
+      noButton.style.left = randomX + 'px';
+      noButton.style.top = randomY + 'px';
+    }
+  </script>
+</body>
+
+</html>
